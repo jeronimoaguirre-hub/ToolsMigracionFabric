@@ -26,11 +26,23 @@ knowledge/
 
 ### Requisitos
 
-- Git y acceso al repositorio de la plantilla.
-- Python 3.12 o superior y `uv`, instalados por el método aprobado por tu organización.
-- Coda instalado y acceso habilitado a sus agentes y skills.
-- Para consultar Fabric mediante ODBC: Microsoft ODBC Driver 17 o 18 for SQL Server.
-- Para usar el MCP opcional de Fabric: Azure CLI, el SDK de .NET que proporciona `dnx` y acceso de Azure a Fabric.
+Este harness solo necesita **Python + uv** (no requiere Node ni otros runtimes).
+Instala, en este orden, por el método aprobado por tu organización:
+
+| Requisito | Para qué | Cómo instalar / verificar |
+|---|---|---|
+| Git | Clonar el repositorio | `git --version` |
+| Python 3.12+ | Ejecutar los scripts de consulta a Fabric | `python --version` |
+| [uv](https://docs.astral.sh/uv/) | Gestor de paquetes de Python; instala las dependencias del `pyproject.toml` | `pip install uv` (o el instalador oficial) → verificar con `uv --version` |
+| Coda | Ejecutar los agentes y skills del harness | Verificar acceso a sus agentes y skills |
+| Microsoft ODBC Driver 17 o 18 for SQL Server | Conexión ODBC al Warehouse de Fabric (solo si usarás `fabric-odbc-query`) | Descarga oficial de Microsoft; verificar con `uv run python -c "import pyodbc; print(pyodbc.drivers())"` |
+| Azure CLI (`az`) + `dnx` | Solo si usarás el MCP opcional de Fabric | `az login` con la cuenta autorizada; verificar `dnx --version` |
+
+> **Nota para el agente:** antes de ejecutar cualquier script, verifica que `uv` esté
+> disponible y corre `uv sync` en la raíz del repo para instalar las dependencias
+> Python (`pandas`, `pyodbc`, `python-dotenv`, `msal`, `requests`). Si falta el
+> driver ODBC o `uv`, indícale al ingeniero qué instalar; no intentes instalar
+> software de sistema por tu cuenta.
 
 ### Crear el repositorio del producto
 
