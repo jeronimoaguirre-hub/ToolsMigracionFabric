@@ -1,0 +1,23 @@
+# Secretos y cachés de autenticación
+.env
+.fabric_msal_cache.bin
+.pbi_msal_cache.bin
+
+# Entorno Python
+.venv/
+__pycache__/
+*.pyc
+
+# Evidencias de pruebas (se regeneran)
+outputs/
+
+# Coda: sesiones y configuración local (el harness .coda/ sí se versiona)
+.coda/MEMORY.md
+.coda/sessions/
+.coda/tmp/
+.coda/checkpoints/
+.coda/logs/
+.coda/fgr/
+
+# Editor
+.vscode/

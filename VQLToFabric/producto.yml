@@ -1,0 +1,35 @@
+# Configuración del producto de datos. Dueño: el desarrollador.
+# Se llena con /iniciar-producto (o a mano). Los agentes y scripts leen este archivo.
+# Mientras haya valores TODO, el harness no está listo.
+
+producto:
+  nombre: TODO            # ej. DM_PRODUCTO
+  descripcion: TODO       # una línea
+
+vql:
+  directorio: denodo-vql
+  # Prefijos de vistas en los archivos VQL exportados; ajusta al producto.
+  prefijos:
+    report_view: rv_
+    base_view: bv_
+  # Patrones que identifican el origen físico al final de las dependencias
+  origen_fisico:
+    - '"_SYS_BIC"'        # Calculation Views de HANA
+    # - 'ds_sqlserver_'   # agrega otros orígenes que aparezcan en el VQL
+
+fabric:
+  workspace: TODO         # nombre del workspace Gold
+  warehouse: TODO         # ej. wh_gld_xxx
+  lakehouse_gold: TODO    # lakehouse que leen las vistas (referencia 3 partes), si aplica
+  # Esquemas destino en el Warehouse
+  esquemas:
+    report: TODO          # ej. report_views_xxx   (vistas que consume el reporte)
+    projection: TODO      # ej. projection_views_xxx (vistas intermedias), o vacío si no hay
+  # Esquemas del lakehouse que son fuente de las vistas
+  fuentes_lakehouse:
+    - TODO                # ej. sc_xxx_hana
+
+# Dónde despliega el ingeniero el DDL (solo documental; la IA no despliega)
+despliegue:
+  metodo: TODO            # ej. "notebook en repo X", "pipeline Y", "script manual"
+  convencion_archivo: "ddl/{vista}.sql"

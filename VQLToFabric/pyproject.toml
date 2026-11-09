@@ -1,0 +1,12 @@
+[project]
+name = "producto-vql-fabric"
+version = "0.1.0"
+description = "Harness de migración VQL (Denodo) a T-SQL (Fabric Gold)"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=2.2",
+    "pyodbc>=5.1",
+    "python-dotenv>=1.0",
+    "msal>=1.30",
+    "requests>=2.32",
+]
