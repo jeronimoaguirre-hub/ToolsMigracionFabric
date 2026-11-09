@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "defaultMode": "default",
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Edit(ledger/**)",
+      "Edit(ddl/**)",
+      "Edit(knowledge/patrones-producto.md)",
+      "Bash(uv run python .coda/skills/fabric-odbc-query/scripts/consultar_fabric.py:*)",
+      "Bash(uv sync)",
+      "Bash(az account show)"
+    ],
+    "ask": [
+      "Edit(producto.yml)",
+      "Edit(CONTEXTO_PRODUCTO.md)",
+      "Edit(.coda/**)",
+      "Edit(knowledge/patrones-base.md)",
+      "Edit(knowledge/funciones-vql-tsql.md)"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(**/*.bin)",
+      "Bash(git push:*)",
+      "Bash(git remote:*)",
+      "Bash(cat .env:*)",
+      "Bash(cat .env)",
+      "Bash(type .env:*)"
+    ]
+  }
+}
