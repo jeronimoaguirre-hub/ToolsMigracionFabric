@@ -1,0 +1,54 @@
+{
+  "permissions": {
+    "defaultMode": "default",
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Edit(.coda/tmp/**)",
+      "Edit(Inventario_Fabric_*.xlsx)",
+      "Edit(TRS-9 Padre - *.md)",
+      "Edit(TRS-9 Hija (Release *) - *.md)",
+      "Edit(pyproject.toml)",
+      "Edit(uv.lock)",
+      "Bash(python .coda/skills/trs9-preflight/scripts/preflight.py:*)",
+      "Bash(python --version)",
+      "Bash(pip --version)",
+      "Bash(uv --version)",
+      "Bash(uv init --bare)",
+      "Bash(uv add:*)",
+      "Bash(uv sync)",
+      "Bash(uv run python:*)",
+      "Bash(uv tool install ms-fabric-cli)",
+      "Bash(fab --version)",
+      "Bash(fab auth status)",
+      "Bash(fab ls:*)",
+      "Bash(fab get:*)",
+      "Bash(az --version)",
+      "Bash(az account show:*)",
+      "Bash(az account get-access-token:*)",
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Bash(dnx --help)",
+      "Bash(dotnet --list-sdks)",
+      "Bash(powershell -Command \"Get-OdbcDriver:*)"
+    ],
+    "ask": [
+      "Edit(TRS - 9/**)",
+      "Edit(.coda/skills/**)",
+      "Edit(.coda/mcp.json)",
+      "Edit(.env)"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(**/.env)",
+      "Read(**/*.bin)",
+      "Bash(git push:*)",
+      "Bash(git remote:*)",
+      "Bash(cat .env:*)",
+      "Bash(cat .env)",
+      "Bash(type .env:*)",
+      "Bash(az login:*)"
+    ]
+  }
+}
