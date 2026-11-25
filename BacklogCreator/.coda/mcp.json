@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "azure-devops": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@azure-devops/mcp",
+        "ecopetrolad",
+        "--authentication",
+        "interactive"
+      ]
+    }
+  }
+}
